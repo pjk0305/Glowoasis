@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#popup_text>span').click(function(){
+                $('#popup').css({"display":"none"})
+            })
+            $('#header2>#gnb>li').mouseenter(function(){
+                $(this).children('.sub').stop().fadeIn(300)
+            })
+            $('#header2>#gnb>li').mouseleave(function(){
+                $(this).children('.sub').stop().fadeOut(100)
+            })
+            $('#header2>#gnb>li').mouseenter(function(){
+                $(this).children('.point').stop().fadeIn(300)
+            })
+            $('#header2>#gnb>li').mouseleave(function(){
+                $(this).children('.point').stop().fadeOut(100)
+            })
+
+        })
+    </script>
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
+        *{ margin: 0; padding: 0; list-style: none;}
+        header{ width: 100%;}
+        #header1{ width: 100%; height: 39px; border-top: 1px solid #fff; background-color: #e1b6a5;}
+        #header1>h2{ width: 220px; height: 39px; line-height: 25px; float: left; margin-left: 115px; color: white; font-size: 15px; margin-top: 10px;}
+        #header1>ul{ width: 400px; height: 39px;  line-height: 30px; float: right; margin-right: 100px;}
+        #header1>ul>li{ float: left; margin-left: 20px; font-size: 12px; color: #fff;}
+        #header1>ul>li>span{ text-align: center; display:inline-block; width: 15px; height: 15px; border-radius: 25px; background-color: #fff; color: #000 ; vertical-align: middle; line-height: 15px;}
+        #search{width: 20px; height: 20px; border: none; left: 0px; margin-top: 7px;}
+        #search:hover{cursor: pointer;}
+
+
+        #header2{ width: 100%; height: 85px; position: relative; background-color: #e1b6a5;}
+        #header2>#logo{ width: 193px; height: 36px; float: left; margin-left: -250px; margin-top: 25px; left: 30px;}
+        #header2>#gnb{ width: 700px;height: 85px;position: absolute;left: 0;right: 0;top: 0;margin: auto; text-align: center;}
+        #header2>#gnb>li{ display: inline-block; margin-left: 40px; font-size: 20px; text-align: center; margin-top: 25px; color: #fff; position: relative; cursor: pointer;}
+        #header2>#gnb>li>.sub{width: 500px;height: 320px;background-color: rgba(255, 255, 255, 0.8); border: 1px solid #ccc; position: absolute; z-index: 9999; left: -20px;top: 40px;}
+        #header2>#gnb>li:nth-child(1)>.sub{display: none;}
+        #header2>#gnb>li:nth-child(2)>.sub{display:none;}
+        #header2>#gnb>li:nth-child(5)>.sub{display: none;}
+        #header2>#gnb>li>.sub>ul{width: 80px; float: left;margin-top: 20px;margin-left: 25px;color: #777; text-align: left; font-size: 15px; line-height: 30px;}
+        #header2>#gnb>li>.sub>ul>li:hover{color: #333;}
+        #header2>#gnb>li>.sub>img{float: right; margin-top: 20px; margin-right: 15px;}
+        .point{position: absolute; width: 5px;height: 5px;border-radius: 5px; background-color: #fff; left: 0;right: 0;top: -5px; margin: auto; display: none;}
+
+
+        #header2>button{ width: 150px;height: 30px;background-color: #fff; float: right;margin-right: 95px; margin-top: 22px; border-radius: 20px; margin-top: 30px; border: none; color: rgb(228, 179, 198);}
+        #header2>button:hover{cursor: pointer;}
+        #slide{width: 100%;height: 600px; background: url(images/main_section_1__img.jpg)center; position: relative;}
+        #slide_leftbt{position: absolute; top: 0; bottom: 0; left: 10px; margin: auto;}
+        #slide_leftbt:hover{cursor: pointer;}
+        #slide_rightbt{position: absolute; top: 0; bottom: 0; right: 10px; margin: auto;}
+        #slide_rightbt:hover{cursor: pointer;}
+        body{background-color: #e1b6a5; color: #fff;}
+        #product{ width: 1300px; margin: auto; margin-top: 50px; text-align: center;}
+        #product_title_h2{font-size: 35px; margin-top: 30px;}
+        #product_line{width: 30px; height: 2px; background-color: #fff; margin: 30px auto;}
+        #product_title_p{font-size: 15px;}
+        #product>ul{overflow: hidden;}
+        #product>ul>h4{font-size: 30px;}
+        #product>ul>li{width: 295px; height: 500px; margin: 15px; float: left;  border-radius: 15px;}
+        #product>ul>li>.product_img{width: 295px; height: 295px; border-radius: 15px; margin: auto; float: left;}
+        #product>ul>li:nth-child(1)>.product_img{ background: url(images/1.png) center no-repeat; background-size: cover;}
+        #product>ul>li:nth-child(1)>.product_img:hover{ background: url(images/1-1.jpg) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(2)>.product_img{ background: url(images/2.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(2)>.product_img:hover{ background: url(images/2-1.jpg) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(3)>.product_img{ background: url(images/3.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(3)>.product_img:hover{ background: url(images/3-1.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(4)>.product_img{ background: url(images/4.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(4)>.product_img:hover{ background: url(images/4-1.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(5)>.product_img{ background: url(images/5.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(5)>.product_img:hover{ background: url(images/5-1.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(6)>.product_img{ background: url(images/6.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(6)>.product_img:hover{ background: url(images/6-1.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(7)>.product_img{ background: url(images/7.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(7)>.product_img:hover{ background: url(images/7-1.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(8)>.product_img{ background: url(images/8.png) center no-repeat;background-size: cover;}
+        #product>ul>li:nth-child(8)>.product_img:hover{ background: url(images/8-1.png) center no-repeat;background-size: cover;}
+        #product2{width: 1300px; margin: 10px auto; text-align: center;}
+        #product2>ul{overflow: hidden;}
+        #product2>ul>li{width: 417px; margin: 8px; float: left; font-size: 15px;}
+        #product2>ul>li>h4{font-size: 25px; margin-top: 20px;}
+        #product2>ul>li>p{margin-top: 10px;}
+        #product2>ul>li>img{width: 100%;border-radius: 20px;}
+        #product2>ul>li>img:hover{cursor: pointer;}
+        #video{width: 1300px; margin: auto; margin-top: 50px; text-align: center;}
+        #ytb_video{margin-top: 50px;}
+        #story{width: 100%; height: 1570px; background-color: #e1b6a5;  text-align: center; position: relative; margin-top: 150px;}
+        #story_bg{width: 100%; height: 400px; background: url(images/background.jpg) center no-repeat fixed;}
+        #product_story_h2{font-size: 35px; color: #fff; margin: auto; display: inline; line-height: 200px;}
+        #product_story_line{width: 30px; height: 2px; background-color: #fff; margin: auto;}
+        #story_wrap {width: 1300px; height: 1500px;  position: absolute; left: 0; right: 0; margin: auto; top: 150px; text-align: center;}
+        #story_content{width: 1300px;  height: 416px; margin-top: 100px;}
+        #story_content_left{width: 650px; height: 416px; background: url(images/main_section_3_banner_img1.jpg) center no-repeat; background-size: cover; float: left;}
+        #story_content_left:hover{cursor: pointer;}
+        #story_content_right{width: 650px; height: 416px; background-color: #fff; float: right; color: #000; padding: 30px; box-sizing: border-box; text-align: left;}
+        #story_content_right>h4{font-size: 30px;}
+        #story_content_right>p{margin-top: 10px; padding: 30px;}
+        #story_content_right>button{ border: none; margin-top: 40px; padding: 20px;}
+        #story_content_right>button:hover{cursor: pointer;}
+        #magazine{ width: 1300px; height: 416px;  text-align: center;}
+        #magazine>ul{margin-top: 30px;}
+        #magazine>ul>li{width: 25%; box-sizing: border-box; float: left; background: #fff; transition: 0.5s;}
+        #magazine>ul>li:hover{transform:translate(0,-20px);} 
+        #magazine_title{text-align: center;}
+        #magazine>ul>li>img{ width: 325px;  height: 325px;}
+        #product_magazine_h2{font-size: 35px; color: #000; margin: auto; margin-top: 150px; }
+        #product_magazine_line{width: 30px; height: 2px; background-color: #000; margin: auto; display: inline-block; }
+        #magazine>ul>li>h5{color: #000; font-size: 18px; padding: 10px;}
+        #magazine>ul>li>p{color: #000;padding: 5px; font-size: 12px; margin: 5px;}
+        #magazine>ul>button{width: 180px; height: 50px; margin-top: 65px; border: none;}
+        #magazine>ul>button:hover{cursor: pointer;}
+        #instagram{width: 100%; height: 510px;  overflow: hidden; margin-top: 50px; text-align: center;}
+        #instagram_title{width: 1300px; height: 80px; margin: auto; margin-top: 70px; line-height: 80px; float: center;}
+        #instagram>ul{width: 1300px; height: 190px;  box-sizing: border-box; margin: auto;}
+        #instagram>ul>li{width: 216px; height: 190px; float: left;}
+        #instagram>ul>li>img{width: 100%; height: 100%;}
+        #instagram_title>.instagram_line{width: 200px; height: 1px; background-color: #fff; display: inline-block; vertical-align: middle;}
+        #instagram_title>img{vertical-align: middle;}
+        #instagram_title>h5{display:inline-block; vertical-align: middle;}
+        #footer1{width: 100%;height: 350px; border-top: 2px solid #fff; border-bottom: 2px solid #fff; text-align: center;}
+        #footer1>ul{width: 1300px; height: 330px; margin: auto; margin-top: 10px;}
+        #footer1>ul>li{width: 33.333%; height: 330px; float: left; box-sizing: border-box;}
+        #footer1>ul>li>h5{font-size: 25px; padding: 10px;}
+        #footer1>ul>li>h3{font-size: 35px; padding: 10px;}
+        #footer1>ul>li>p{font-size: 12px; padding: 10px; line-height: 25px;}
+        #footer2 {width: 100%; height: 140px; text-align: center; overflow: hidden; }
+        #footer2>p{margin-top: 30px; font-size: 10px;}
+        #footer2>p>img{vertical-align: middle;}
+        #footer2>ul>li{display: inline-block; background-color: #fff; color: #000; height: 25px; line-height: 30px; padding: 7px; margin-top: 30px; font-size: 12px; border-radius: 20px;}
+        #footer2>ul>li:hover{cursor: pointer;}
+        #popup{width: 450px;height: 477px; border: 1px solid #000;position: absolute; left: 55px;top: 50px;z-index: 9999;}
+        #popup>img{width: 100%; vertical-align: top;}
+        #popup_text{background-color: #96735d;color: #fff; text-align: right; font-size: 12px;height: 25px; line-height: 25px;}
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header1">
+            <h2>C/S CENTER 070-5222-8446</h2>
+            <ul>
+                <li>login</li>
+                <li>join</li>
+                <li>cart  <span>0</span></li>
+                <li>order</li>
+                <li>my page</li>
+                <li><img src="icons/top_r_menu_icon_03_b.jpg" alt="" id="search"></li>
+            </ul>
+        </div>
+        <div id="header2">
+            <h2 id="logo"><img src="icons/logo_1.png" alt=""></h2>
+            <ul id="gnb">
+                <li><div class="point"></div> shop
+                    <div class="sub">
+                        <ul>
+                            <li>best</li>
+                            <li>cleanser</li>
+                            <li>skincare</li>
+                            <li>special kit</li>
+                            <li>goods</li>
+                        </ul>
+                        <img src="images/category_item_img_1.jpg" alt="">
+                    </div>
+                </li>
+                <li><div class="point"></div>community
+                    <div class="sub">
+                        <ul>
+                            <li>membership</li>
+                            <li>Q&A</li>
+                            <li>FAQ</li>
+                        </ul>
+                        <img src="images/community_img.jpg" alt="">
+                    </div>
+                </li>
+                <li><div class="point"></div>review</li>
+                <li><div class="point"></div>event</li>
+                <li><div class="point"></div>brand
+                    <div class="sub">
+                        <ul>
+                            <li>story</li>
+                            <li>magazine</li>
+                            <li>news</li>
+                        </ul>
+                        <img src="images/brand_img.jpg" alt="">
+                    </div>
+                </li>
+            </ul>
+            <button>10% OFF COUPON <img src="" alt=""></button>
+        </div>
+    </header>
+    <!--  -->
+
+    <div id="slide">
+        <img src="icons/slider_2_prev_btn.png" alt="" id="slide_leftbt">
+        <img src="icons/slider_2_next_btn.png" alt="" id="slide_rightbt">
+    </div>
+
+    <div id="product">
+        <h2 id="product_title_h2">product</h2>
+        <div id="product_line"></div>
+        <p id="product_title_p">독자적인 비건 프로바이오틱스 처방으로 더욱 건강한 <br> glowoasis의 비건 스킨케어 라인을 만나보세요</p>
+        <ul>
+            <li><div class="product_img"></div>
+            <h4>프로바이오틱스 플러스 무루무루 퐁당 립밤</h4>
+            <h5><span>12,900원</span>12,900원</h5>
+
+            <li><div class="product_img"></div>
+            <h4>프로바이오틱스 플러스 무루무루 울트라 카밍 토너</h4>
+            <h5>32000원</h5>
+            
+            <li><div class="product_img"></div>
+            <h4>프로바이오틱스 플러스 무루무루 하이드라 서지 모이스처라이저</h4>
+            <h5>38,000원</h5>
+
+            <li><div class="product_img"></div>
+            <h4>글로우샷 수퍼치지드 하이드레이팅 세럼 30ml (미백,주름개선)</h4>
+            <h5>46,000원</h5>
+            
+            <li><div class="product_img"></div>
+            <h4>밀크듀 pH 밸런싱 모이스처 밀크 토너 120ml</h4>
+            <h5>39,000원</h5>
+            
+            <li><div class="product_img"></div>
+            <h4>글로우버스트 인텐스 하이드레이션 부스팅 크림 50ml</h4>
+            <h5>46,000원</h5>
+           
+            <li><div class="product_img"></div>
+            <h4>메이크업멜트 클렌징밤 100ml</h4>
+            <h5>39,000원</h5>
+            
+            <li><div class="product_img"></div>
+            <h4>클라우드 클렌즈 클라우드 휠드 폼 클렌저 144ml</h4>
+            <h5>29,000원</h5>
+          
+        </ul>
+    </div>
+    <div id="product2">
+        <ul>
+            <li>
+                <img src="images/main_section_banner_1.jpg" alt="">
+                <h4>welcome to your oasis</h4>
+                <p>회원가입하고 카카오 채널 추가하면 쿠폰과 적립금을 드려요!</p>
+            </li>
+            <li>
+                <img src="images/main_section_banner_2.jpg" alt="">
+                <h4>we are vegan!</h4>
+                <p>비건소사이어티 인증을 받은 glowasis의 제품을 만나보세요.</p>
+            </li>
+            <li>
+                <img src="images/main_section_banner_3.jpg" alt="">
+                <h4>glowoasis for earth!</h4>
+                <p>환경을 생각하는 glowasis의 eco-friendly 패키지</p>
+            </li>
+        </ul>
+    </div>
+
+    <div id="video">
+        <h2 id="product_title_h2">glowoasis video</h2>
+        <div id="product_line"></div>
+        <p id="product_title_p">글로오아시스의 무드를 영상으로 느껴보세요.</p>
+        <iframe width="1280" height="720" id="ytb_video" src="https://www.youtube.com/embed/TUn3m6U7kno?autoplay=1&amp;mute=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;start=3&amp;playlist=AkTpOCl3TV4" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div id="story">
+        <div id="story_bg">
+            <h2 id="product_story_h2">story</h2>
+            <div id="product_story_line"></div>
+        </div>
+            <div id="story_wrap">
+                <h3 id="story_title"></h3>
+                <div id="story_line"></div>
+                <div id="story_content">
+                    <div id="story_content_left"></div>
+                    <div id="story_content_right">
+                        <h4>vegan·clean·effective</h4>
+                        <p>뉴욕에서 시작된 글로벌 뷰티 브랜드 글로오아시스는 건강한 생활을 지향하며 독특한 개성을 추구하는 소비자를 위한 비건 스킨케어 루틴을 제안해요. 비건 프로바이오틱스 성분을 핵심으로 하는 깨끗하고 효과적인 제품으로 여러분의 화장대와 라이프 스타일 전반에 즐거운 변화를 선사할 거에요!</p>
+                        <button>glowoasis story</button>
+                    </div>
+                </div>
+                <div id="magazine">
+                    <h3 id="magazine_title">
+                        <h2 id="product_magazine_h2">magazine</h2>
+                        <div id="product_magazine_line"></div>
+                    </h3>
+                    <ul>
+                        <li>
+                            <img src="images/magazine1.jpg" alt="">
+                            <h5>Our Hero! vegan probiotics</h5>
+                            <p>우리의 피구 고민을 해결해줄 히어로! 글로오아시스의 비건 프로바이오틱스를 소개합니다.</p>
+                        </li>
+                        <li>
+                            <img src="images/magazine2.jpg" alt="">
+                            <h5>what is Microbiome?</h5>
+                            <p>화장품 업계에서 가장 뜨겁게 떠오른 키워드 마이크로바이옴! 도대체 뭐길래 이렇게 다들 집중하는 것일까</p>
+                        </li>
+                        <li>
+                            <img src="images/magazine3.jpg" alt="">
+                            <h5>our no-no!</h5>
+                            <p>얼굴에 닿는 화장품 아무 제품이나 사용할 수 없죠. 글로오아시스에서는 까다롭게 <span>no-no list</span>를 관리해요</p>
+                        </li>
+                        <li>
+                            <img src="images/magazine4.jpg" alt="">
+                            <h5>our vegan alternatives</h5>
+                            <p>우리가 매일 아침, 저녁으로 사용하는 스킨케어 제품에 동물성 원료가 들어있을 수 있다는 사실을 알고 계시나</p>
+                        </li>
+                        <button>게시물 더보기</button>
+                    </ul>
+                </div>
+            </div>
+    </div>
+
+
+    <div id="instagram">
+        <div id="instagram_title">
+            <div class="instagram_line"></div>
+            <img src="icons/instar_icon.jpg" alt="">
+            <h5>instagram</h5>
+            <div class="instagram_line"></div>
+        </div>
+        <ul>
+            <li><img src="images/in1.jpg" alt="" class="instagram_img"></li>
+            <li><img src="images/in2.jpg" alt="" class="instagram_img"></li>
+            <li><img src="images/in3.jpg" alt="" class="instagram_img"></li>
+            <li><img src="images/in4.jpg" alt="" class="instagram_img"></li>
+            <li><img src="images/in5.jpg" alt="" class="instagram_img"></li>
+            <li><img src="images/in6.jpg" alt="" class="instagram_img"></li>
+        </ul>
+    </div>
+
+    <div id="footer1">
+        <ul>
+            <li>
+                <h5>c/s</h5>
+                <h3>070-5222-8446</h3>
+                <p>AM 10:00 - PM 5:00<br> AM 11:30 - PM 1:00 점심시간<br>*토, 일요일 및 공휴일 휴무입니다.</p>
+                <p>마케팅/광고 문의 : sjm@glowoasis.kr</p>
+            </li>
+            <li>
+                <h5>company</h5>
+                <p>상호 글로오아이스 주식회사 대표 민석기<br>사업자 등록번호 134-87-39380<br>통신판매업 신고 제 2020-서울상동-02206호 [사업자정보확인]<br>전화 070-5222-8446<br>본사주소 서울특별시 성동구 성수동1가 아차산로 49,206호<br>강남지사주소 서울특별시 강남구 테해란로 528 슈페리어타워 8층<br>개인정보관리책임자 민경수 (moverdot@glowoasis.kr)</p>
+            </li>
+            <li>
+                <h5>BANK</h5>
+                <p>하나은행 207-910015-49804</p>
+                <p>예금주 글로오아시스 주식회사</p>
+            </li>
+        </ul>
+    </div>
+
+    <div id="footer2">
+        <p><img src="icons/bn_cafe24.jpg" alt=""><img src="icons/pg_kg.jpg" alt="">고객님은 안전거래를 위해 결제시 저희 쇼핑몰에서 가입한 구매안전 서비스를 이용하실 수 있습니다.</p>
+        <ul>
+            <li>이용약관</li>
+            <li>개인정보취급방침</li>
+            <li>이용안내</li>
+        </ul>
+    </div>
+
+    <!--  -->
+    <div id="popup">
+        <img src="images/popup.jpg" alt="">
+        <div id="popup_text">
+            오늘하루 열지 않음 <input type="checkbox" name="" id=""> <span>닫기 X</span>  
+        </div>
+    </div>
+
+</body>
+</html>
